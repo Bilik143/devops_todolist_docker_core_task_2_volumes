@@ -16,7 +16,7 @@ docker network create todonet
 docker run -d \
 	--name mysql-local \
 	--network todonet \
-	-e MYSQL_ROOT_PASSWORD=secret \
+	-e MYSQL_ROOT_PASSWORD=rootpassword \
 	-e MYSQL_DATABASE=app_db \
 	-e MYSQL_USER=app_user \
 	-e MYSQL_PASSWORD=1234 \

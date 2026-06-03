@@ -67,8 +67,8 @@ DATABASES = {
         'NAME': 'app_db',
         'USER': 'app_user',
         'PASSWORD': '1234',
-        'HOST': 'localhost',  # Use localhost for local MySQL connections
-        'PORT': '',  # Empty string uses default socket/port
+        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),  # Read from env to allow container-to-container communication
+        'PORT': os.environ.get('DATABASE_PORT', ''),  # Read from env or use default/socket when empty
     }
 }
 
