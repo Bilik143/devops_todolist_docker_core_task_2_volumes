@@ -17,9 +17,9 @@ docker run -d \
 	--name mysql-local \
 	--network todonet \
 	-e MYSQL_ROOT_PASSWORD=secret \
-	-e MYSQL_DATABASE=todolist \
-	-e MYSQL_USER=todo \
-	-e MYSQL_PASSWORD=todo_password \
+	-e MYSQL_DATABASE=app_db \
+	-e MYSQL_USER=app_user \
+	-e MYSQL_PASSWORD=1234 \
 	-v mysql-data:/var/lib/mysql \
 	-p 3306:3306 \
 	mysql-local:1.0.0
@@ -41,9 +41,9 @@ docker run -d \
 	--network todonet \
 	-e DATABASE_HOST=mysql-local \
 	-e DATABASE_PORT=3306 \
-	-e DATABASE_NAME=todolist \
-	-e DATABASE_USER=todo \
-	-e DATABASE_PASSWORD=todo_password \
+	-e DATABASE_NAME=app_db \
+	-e DATABASE_USER=app_user \
+	-e DATABASE_PASSWORD=1234 \
 	-p 8000:8000 \
 	YOUR_DOCKERHUB_USERNAME/todolist:latest
 ```
@@ -59,9 +59,9 @@ docker run -d \
 	--network todonet \
 	-e DATABASE_HOST=mysql-local \
 	-e DATABASE_PORT=3306 \
-	-e DATABASE_NAME=todolist \
-	-e DATABASE_USER=todo \
-	-e DATABASE_PASSWORD=todo_password \
+	-e DATABASE_NAME=app_db \
+	-e DATABASE_USER=app_user \
+	-e DATABASE_PASSWORD=1234 \
 	-p 8000:8000 \
 	local/todolist:latest
 ```

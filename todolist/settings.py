@@ -67,20 +67,19 @@ DATABASES = {
         'NAME': 'app_db',
         'USER': 'app_user',
         'PASSWORD': '1234',
-        'HOST': 'mysql',  # MySQL container hostname on Docker network
-        'PORT': '3306',  # MySQL default port
+        'HOST': 'localhost',  # Use localhost for local MySQL connections
+        'PORT': '',  # Empty string uses default socket/port
     }
 }
 
-    # "default": {
-    #     "ENGINE": "django.db.backends.mysql",
-    #     "HOST": "FVFFM3F5Q05N", 
-    #     "PORT": 3306,
-    #     "NAME":"tododb",
-    #     "PASSWORD": "my-secret-pw", 
-    #     "USER": "root",
-    # }
-}
+        # "default": {
+        #     "ENGINE": "django.db.backends.mysql",
+        #     "HOST": "FVFFM3F5Q05N", 
+        #     "PORT": 3306,
+        #     "NAME":"tododb",
+        #     "PASSWORD": "my-secret-pw", 
+        #     "USER": "root",
+        # }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
